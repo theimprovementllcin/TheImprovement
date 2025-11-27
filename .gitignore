@@ -49,3 +49,17 @@ next-env.d.ts
 
 # Contentlayer
 .contentlayer
+# Large image files not tracked in git
+public/images/background/builderbg.png
+public/images/services/homedecorimage.jpg
+public/images/custombuilder/subservices/civilengineering/packages/modal.jpg
+public/images/custombuilder/subservices/painting/howitworks/SiteInspectionQuotation.jpg
+public/images/custombuilder/subservices/painting/howitworks/AcceptQuotation.jpg
+public/images/background/properties_bg1.jpg
+public/images/background/loginimage3.jpg
+public/images/background/loginimage2.jpg
+public/images/custombuilder/subservices/painting/howitworks/FreeColourConsulation.jpg
+public/images/referandearn/referandearnexplore.jpg
+public/home/furniture-tab.jpg
+public/images/background/workflow.jpg
+public/home/resedential-construction.jpg
