@@ -9,12 +9,12 @@ import { BlogPageProps } from "@/pages/blogs";
 import { useRouter } from "next/router";
 import Button from "@/common/Button";
 
-
 const filterTags = [
-  "Furniture",
-  "Interiors",
-  "Residential construction",
-  "Construction for business",
+  "Construction",
+  "Demolition",
+  "Flooring",
+  "Roofing",
+  "Exteriors",
   "General",
 ];
 
@@ -66,10 +66,8 @@ const BlogsHero = ({
         </div>
 
         <div className="max-w-[1292px] w-full mx-auto px-4 md:px-8">
-         
           <div className="bg-white rounded-2xl shadow-md p-4 md:p-6 -mt-8 md:-mt-12 relative z-10">
             <div className="flex md:flex-row flex-col items-center justify-between gap-4">
-             
               <div className="relative w-full max-w-md">
                 <CustomInput
                   type="text"
@@ -100,7 +98,6 @@ const BlogsHero = ({
                 )}
               </div>
 
-             
               <div className="flex flex-row gap-2  py-1 justify-start overflow-x-auto custom-scrollbar w-full md:w-auto">
                 {filterTags.map((tag, index) => (
                   <Button
@@ -120,7 +117,6 @@ const BlogsHero = ({
             </div>
           </div>
 
-         
           <div className="flex flex-col md:flex-row gap-4 md:px-4 px-5 md:mt-5 mt-2">
             {initialFeaturedBlogs.length > 0 && (
               <div className="md:flex-1">
@@ -183,9 +179,6 @@ const BlogsHero = ({
                 </div>
               ))}
           </div>
-
-        
-          
         </div>
       </div>
     </>

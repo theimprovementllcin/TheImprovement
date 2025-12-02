@@ -103,7 +103,7 @@ const HvacComponent = () => {
         description:
           "Professional air conditioning installation and fast repair service.",
         imageUrl:
-          "/images/custombuilder/subservices/plumbing/chooseservices/fanacinstallation.png",
+          "/images/custombuilder/subservices/plumbing/chooseservices/FanACInstallation.png",
       },
       {
         name: "Heating System Setup",

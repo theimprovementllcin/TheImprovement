@@ -339,7 +339,7 @@ const AuthModal = ({ isOpen, closeModal, callbackUrl }: AuthModalProps) => {
           <div className=" flex items-center md:space-x-3 space-x-2">
             <div className="relative w-9 h-9">
               <Image
-                src="/images/logobb.png"
+                src="/images/newlogo2.png"
                 alt="TheImprovement logo"
                 fill
                 className="object-contain"
