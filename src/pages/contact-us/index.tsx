@@ -140,7 +140,7 @@ function ContactUs() {
         faq={[
           {
             question: "What's the best way to contact TheImprovement?",
-            answer: "You can reach us via phone at +918897574909, through our contact form, or by visiting our office in New York during business hours."
+            answer: "You can reach us via phone at +918897574909, through our contact form, or by visiting ogeur office in New York during business hours."
           }
         ]}
         service={{
@@ -238,7 +238,7 @@ function ContactUs() {
                     className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm "
                   >
                     <span className="label-text">📞</span>
-                    <span>+91 8897574909</span>
+                    <span>+1 (203) 610-3084</span>
                   </a>
                   <a
                     href="mailto:hello@TheImprovement.in"
@@ -248,7 +248,7 @@ function ContactUs() {
                     <span>sales@TheImprovement.in</span>
                   </a>
                   <a
-                    href="https://api.whatsapp.com/send/?phone=918897574909&text&type=phone_number&app_absent=0"
+                    href="https://api.whatsapp.com/send/?phone=+1 (203) 610-3084&text&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 text-white/90 hover:text-white transition-colors text-sm "

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import BreadCrumb from "../../BreadCrumb";
-import ServiceHeroSection, {
-  IServiceHeroSectionInterfaceProps,
-} from "../Components/ServiceHeroSection";
+
 import ServiceProcess, {
   ServiceProcessProps,
   StepProps,
 } from "../Components/ServiceProcess";
+import ServiceHeroSection, {
+  IServiceHeroSectionInterfaceProps,
+} from "../Components/ServiceHeroSection";
 import ChooseUs from "../Components/ChooseUs";
 import OurPartners from "../Components/OurPartners";
 import TestimonialsSection, {
@@ -56,25 +57,25 @@ const faqs = [
   },
 ];
 
-const PlumbingHeroSectionData: HeroSectionProps = {
-  heading: "Book reliable professionals for your home",
-  bgimage: "/images/custombuilder/subservices/plumbing/herosection.png",
-  formdata: [
-    {
-      id: 1,
-      label: "",
-      placeholder: "Select your location",
-      type: "text",
-      icon: <FaMapMarkerAlt className="text-[20px] text-[#FFFFFF]" />,
-    },
-    {
-      id: 2,
-      label: "",
-      placeholder: "What services do you need?",
-      type: "text",
-      icon: <FaSearch className="text-[20px] text-[#FFFFFF]" />,
-    },
-  ],
+const plumbingHeroData = {
+  heading: "Book Reliable Plumbing Professionals",
+  subHeading:
+    "Expert plumbing services to keep your home running smoothly — from repairs and maintenance to full installations, we ensure quality and peace of mind.",
+
+  bgImageUrl: "/images/custombuilder/subservices/plumbing/herosection.png",
+
+  bookingCtaUrl: { label: "Book Plumbing Service", url: "" },
+
+  locationcta: [
+      { label: "New York", url: "" },
+      { label: "California", url: "" },
+      { label: "Texas", url: "" },
+    ],
+
+  selectedId: { id: 4, service: "Plumbing" },
+
+  description:
+    "Reliable plumbing solutions including leak repairs, pipe installation, water heater services, and maintenance for your home.",
 };
 const BookNowData: BookNowProps = {
   listItems: [
@@ -204,7 +205,7 @@ const ChooseServicesData: ChooseServicesProps = {
       id: 17,
       title: "Fan/AC Repair & Installation",
       image:
-        "/images/custombuilder/subservices/plumbing/chooseservices/fanacinstallation.png",
+        "/images/custombuilder/subservices/plumbing/chooseservices/FanACInstallation.png",
     },
   ],
 };
@@ -442,7 +443,7 @@ const PlumbingComponent = () => {
   };
 
   return (
-    <div>
+    <div className="px-5 w-full">
       <div className="bg-[#F0F0F0]">
         <BreadCrumb
           steps={[
@@ -452,14 +453,14 @@ const PlumbingComponent = () => {
           currentStep="Plumbing"
         />
       </div>
-     
+
       <div className="mb-[45px] md:mb-[64px] ">
-        <PlumbingHeroSection {...PlumbingHeroSectionData} />
+        <ServiceHeroSection {...plumbingHeroData} />
       </div>
       <div className="mb-[45px] md:mb-[64px] ">
         <BookNowSection {...BookNowData} />
       </div>
-     
+
       <div className="mb-[45px] md:mb-[64px]">
         <ChooseServices {...ChooseServicesData} />
       </div>

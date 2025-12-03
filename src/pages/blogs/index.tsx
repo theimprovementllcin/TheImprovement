@@ -42,7 +42,7 @@ const Blogs = ({
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const blogType = (context.query.blogType as string) || "Interiors";
+  const blogType = (context.query.blogType as string) || "Construction";
 
   try {
     const res = await apiClient.get(apiClient.URLS.blogs, { blogType });

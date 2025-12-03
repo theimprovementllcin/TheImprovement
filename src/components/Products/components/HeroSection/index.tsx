@@ -7,6 +7,8 @@ import { CautionIcon } from "../../icons";
 import Link from "next/link";
 import FileInput from "@/common/FileInput";
 import { useRouter } from "next/router";
+import apiClient from "@/utils/apiClient";
+import toast from "react-hot-toast"
 
 const creddata = [
   {
@@ -55,6 +57,42 @@ const BuilderHeroSection = () => {
   }) => {
     setFormValue((prev) => ({ ...prev, location: selectedOption.location }));
   };
+//   const handleSubmit = async (e: React.FormEvent) => {
+//   e.preventDefault();
+
+//   try {
+//     const payload = {
+//       name: formValue.name,
+//       phonenumber: formValue.phoneNumber,
+//       requirement: formValue.requirement,
+//       location: formValue.location,
+//       email: formValue.email,
+//     };
+
+//     const res = await apiClient.post(apiClient.URLS., payload);
+
+//     if (res.status === 201 || res.status === 200) {
+      
+//       setFormValue({
+//         name: "",
+//         phoneNumber: "",
+//         requirement: "",
+//         location: "",
+//         email: "",
+//       });
+//       toast.success("Your request has been submitted successfully!");
+//     } 
+//     else {
+//       console.error("Failed to submit form", res);
+//       toast.error("Failed to submit your request.");
+//     }
+//   } 
+//   catch (error) {
+//     console.error("Error submitting form:", error);
+//     toast.error("Something went wrong!");
+//   }
+// };
+
   const router = useRouter();
   const LocationData = [
     { id: 1, location: "New York" },
@@ -230,7 +268,9 @@ const BuilderHeroSection = () => {
                 </div>
               </div>
               <div>
-                <Button className="bg-[#5297FF] mt-2 md:py-[6px] py-1 w-full rounded-[6px] text-white font-Gordita-Bold">
+                <Button className="bg-[#5297FF] mt-2 md:py-[6px] py-1 w-full rounded-[6px] text-white font-Gordita-Bold" 
+                // onClick={handleSubmit}
+                >
                   Submit
                 </Button>
               </div>
