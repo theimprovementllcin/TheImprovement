@@ -287,16 +287,15 @@ export const leaddata = Object.values(LeadStatus).map((leadstatus, index) => ({
 export const status_options = Object.values(LeadStatus);
 
 export const statesOptions = [
-  "Andhra Pradesh",
-  "Telangana",
-  "Maharashtra",
-  "Karnataka",
-  "Tamil Nadu",
-  "Kerala",
-  "Gujarat",
-  "Rajasthan",
-  "Uttar Pradesh",
-  "Delhi",
+  "California",
+  "Texas",
+  "Florida",
+  "New York",
+  "Illinois",
+  "Pennsylvania",
+  "Ohio",
+  "Georgia",
+  "Chicago"
 ];
 
 export const filtersdata: Array<{ id: DateFilterType; label: string }> = [

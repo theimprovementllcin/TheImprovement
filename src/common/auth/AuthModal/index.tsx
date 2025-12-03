@@ -339,7 +339,7 @@ const AuthModal = ({ isOpen, closeModal, callbackUrl }: AuthModalProps) => {
           <div className=" flex items-center md:space-x-3 space-x-2">
             <div className="relative w-9 h-9">
               <Image
-                src="/images/newlogo2.png"
+                src="/llclogo.png"
                 alt="TheImprovement logo"
                 fill
                 className="object-contain"
@@ -600,7 +600,7 @@ const AuthModal = ({ isOpen, closeModal, callbackUrl }: AuthModalProps) => {
 
               <Button
                 type="submit"
-                className="w-full bg-[#2872a1]hover:bg-blue-700 text-white py-2.5 rounded-lg font-Gordita-Medium shadow-sm transition disabled:opacity-60"
+                className="w-full bg-[#2872a1] hover:bg-blue-700 text-white py-2.5 rounded-lg font-Gordita-Medium shadow-sm transition disabled:opacity-60"
                 disabled={loading}
               >
                 {loading && <InlineSpinner />}

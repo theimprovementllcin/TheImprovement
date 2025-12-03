@@ -15,27 +15,27 @@ const faqs = [
   {
     question: "What services do you offer?",
     answer:
-      "We provide a comprehensive range of construction and interior services, including Residential Construction, Construction for Business, Interior Design, Vastu Consultation, and Furniture Manufacturing. Our services are tailored to meet your specific needs and ensure a seamless experience from start to finish.",
+      "We offer end-to-end home improvement services including Construction, Demolition, Flooring, Plumbing, HVAC, Roofing, Painting, and Driveway & Exterior Works. Our team ensures safe execution, on-time delivery, and quality workmanship for every project.",
   },
   {
-    question: "How can I estimate the cost of my construction project?",
+    question: "How do I get a cost estimate for my project?",
     answer:
-      "You can use our Construction Cost Estimator tool available on our website. Simply enter your project details, such as the type of building, location, and area, and our estimator will provide you with an accurate cost estimate instantly.",
+      "You can request a free quote directly through our website. Just share your project details—such as the type of service, property size, and location—and our team will provide a transparent and accurate estimate with no hidden charges.",
   },
   {
-    question: "What makes your construction services different from others?",
+    question: "Do you handle both residential and commercial projects?",
     answer:
-      "We stand out by offering on-time delivery, no-cost overruns, and hassle-free project management. With us, you’ll have transparency throughout the process, from budgeting to the final handover, ensuring that there are no hidden charges or unexpected delays.",
+      "Yes, we work on both residential and commercial properties. Whether it's new construction, remodeling, repairs, or exterior improvements, our team is equipped to deliver high-quality results for all types of spaces.",
   },
   {
-    question: "Can I customize my interior design project?",
+    question: "Are your services customizable based on my requirements?",
     answer:
-      "Absolutely! We offer fully customizable interior design services to match your personal style and preferences. Our team of experienced designers works closely with you to create spaces that reflect your vision while ensuring functionality and aesthetics.",
+      "Absolutely. Every service—from construction to painting and flooring—can be fully customized to match your needs, style, and budget. We work closely with you to ensure the final outcome aligns perfectly with your expectations.",
   },
   {
-    question: "What is CustomBuilder in TheImprovement?",
+    question: "Is your team licensed and insured?",
     answer:
-      "CustomBuilder is TheImprovement's specialized service that allows you to design and build your dream home exactly the way you envision it. From architectural design and layout to material choices and interior finishes, CustomBuilder offers the flexibility and expertise to create a space that is uniquely yours.",
+      "Yes, we work with trained, licensed, and fully insured professionals for all our services, ensuring safety, compliance, and high-quality workmanship throughout the project.",
   },
 ];
 type HomepageProps = {

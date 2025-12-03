@@ -1,5 +1,11 @@
 "use client";
-import { useEffect, useRef, useState, type ReactElement, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ReactElement,
+  type ReactNode,
+} from "react";
 import ReactTimeAgo from "react-time-ago";
 import type { NextPage } from "next";
 import { INavItems } from "@/utils/interfaces";
@@ -59,9 +65,6 @@ function UserLayout({
     ? notifications
     : notifications?.slice(0, 3);
 
-
-
-
   const navMenuItems: INavItems[] = [
     {
       name: "Dashboard",
@@ -95,17 +98,16 @@ function UserLayout({
       icon: <MdReviews className="text-[18px]" />,
       isActive: router.pathname === "/user/testimonials",
     },
-
   ];
 
   const logo_place_holder = {
-    imageUrl: "/images/newlogo2.png",
+    imageUrl: "/llclogo.png",
     link: "/",
   };
 
   const markAllAsRead = async () => {
     try {
-      const unreadNotifications = notifications.filter(n => !n.isRead);
+      const unreadNotifications = notifications.filter((n) => !n.isRead);
 
       await Promise.all(
         unreadNotifications.map((notification) =>
@@ -121,7 +123,6 @@ function UserLayout({
 
       toast.success("All notifications marked as read");
       setIsDropdownOpen(false);
-
     } catch (error) {
       console.error("Error marking notifications as read:", error);
       toast.error("Failed to mark all as read");
@@ -131,7 +132,9 @@ function UserLayout({
   const fetchNotifications = async (userId: number) => {
     if (!userId) return;
     try {
-      const res = await apiClient.get(`${apiClient.URLS.notifications}/${userId}`);
+      const res = await apiClient.get(
+        `${apiClient.URLS.notifications}/${userId}`
+      );
       if (res.status === 200) {
         setNotifications(res.body);
       }
@@ -140,7 +143,6 @@ function UserLayout({
       toast.error("Error fetching notifications");
     }
   };
-
 
   useEffect(() => {
     if (session.status === "unauthenticated") {
@@ -156,14 +158,17 @@ function UserLayout({
     }
   }, [session.status, session?.data?.user?.id]);
 
-
   const CommonNavItem = ({ isMobile = false }: { isMobile?: boolean }) => (
-    <div className={`flex h-full flex-col ${isMobile ? 'md:p-4 p-4' : 'lg:px-4 px-2 lg:py-6 py-4'} bg-white`}>
+    <div
+      className={`flex h-full flex-col ${
+        isMobile ? "md:p-4 p-4" : "lg:px-4 px-2 lg:py-6 py-4"
+      } bg-white`}
+    >
       {/* Logo */}
       <div className="z-[99999] mb-2">
-        <Link href={"/"} >
+        <Link href={"/"}>
           <div className="flex items-center justify-start gap-2 cursor-pointer">
-            <div className="relative w-[40px] h-[40px] md:min-h-[40px] min-h-[30px]">
+            <div className="relative w-[30px] h-[30px] md:min-h-[40px] min-h-[30px]">
               <Image
                 src={logo_place_holder.imageUrl}
                 alt="dreamcasa-logo"
@@ -173,11 +178,11 @@ function UserLayout({
             </div>
             <div className=" md:block font-Gordita-Bold leading-tight">
               <p className="flex gap-1">
-                <span className="text-[18px] text-[#2872a1]">ONE</span>
-                <span className="text-[18px] text-gray-900">CASA</span>
+                <span className="text-[18px] text-[#2872a1]"> THE</span>
+                <span className="text-[18px] text-gray-900">IMPROVEMENT</span>
               </p>
               <p className="text-[11px] font-Gordita-Medium text-gray-600">
-                One Roof Every Solution
+                Building Better. Every Day.
               </p>
             </div>
           </div>
@@ -195,7 +200,8 @@ function UserLayout({
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
               <span className="text-[#2872a1] font-Gordita-Medium">
-                {user?.firstName?.[0]}{user?.lastName?.[0]}
+                {user?.firstName?.[0]}
+                {user?.lastName?.[0]}
               </span>
             </div>
             <div>
@@ -233,7 +239,6 @@ function UserLayout({
       )}
 
       <div className="min-h-screen bg-gray-50 flex w-full overflow-x-hidden">
-
         {/* Desktop Sidebar */}
         <div className="hidden lg:flex flex-col w-64 bg-white shadow-lg z-40">
           <CommonNavItem />
@@ -263,7 +268,7 @@ function UserLayout({
                     <div className="relative p-2 rounded-lg hover:bg-gray-100 cursor-pointer transition-colors duration-200 group">
                       <div className="relative">
                         <IoMdNotificationsOutline className="text-gray-600 w-6 h-6 group-hover:text-gray-800 transition-colors" />
-                        {notifications?.some(n => !n.isRead) && (
+                        {notifications?.some((n) => !n.isRead) && (
                           <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full border-2 border-white animate-pulse" />
                         )}
                       </div>
@@ -280,26 +285,37 @@ function UserLayout({
                           Notifications
                         </h3>
                         <p className="md:text-xs text-[10px] text-gray-500 md:mt-1">
-                          {notifications.filter(n => !n.isRead).length} unread
+                          {notifications.filter((n) => !n.isRead).length} unread
                         </p>
                       </div>
                       <div className="flex items-center gap-2">
-                        {notifications?.length > 0 && notifications.some(n => !n.isRead) && (
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={markAllAsRead}
-                            className="text-[#2872a1] hover:text-[#2872a1] hover:bg-blue-50 px-3 py-1 md:text-xs text-[12px] font-Gordita-Medium transition-colors"
-                          >
-                            Mark all read
-                          </Button>
-                        )}
+                        {notifications?.length > 0 &&
+                          notifications.some((n) => !n.isRead) && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={markAllAsRead}
+                              className="text-[#2872a1] hover:text-[#2872a1] hover:bg-blue-50 px-3 py-1 md:text-xs text-[12px] font-Gordita-Medium transition-colors"
+                            >
+                              Mark all read
+                            </Button>
+                          )}
                         <Button
                           onClick={() => setIsDropdownOpen(false)}
                           className="p-1 rounded-md hover:bg-gray-100 text-gray-400 hover:text-gray-600 transition-colors"
                         >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
                           </svg>
                         </Button>
                       </div>
@@ -311,24 +327,45 @@ function UserLayout({
                           {displayedNotifications.map((notification) => (
                             <div
                               key={notification.id}
-                              className={`md:p-4 p-2 transition-all duration-200 hover:bg-gray-50 cursor-pointer ${!notification.isRead ? "bg-blue-50 border-l-4 border-l-[#2872a1]" : ""
-                                }`}
+                              className={`md:p-4 p-2 transition-all duration-200 hover:bg-gray-50 cursor-pointer ${
+                                !notification.isRead
+                                  ? "bg-blue-50 border-l-4 border-l-[#2872a1]"
+                                  : ""
+                              }`}
                               onClick={() => {
                                 if (!notification.isRead) {
                                 }
                               }}
                             >
                               <div className="flex items-start gap-3">
-                                <div className={`flex-shrink-0 md:w-8 md:h-8 w-5 h-5 rounded-full flex items-center justify-center ${!notification.isRead ? "bg-blue-100" : "bg-gray-100"
-                                  }`}>
-                                  <div className={`w-2 h-2 rounded-full ${!notification?.isRead ? "bg-[#2872a1]" : "bg-gray-400"
-                                    }`} />
+                                <div
+                                  className={`flex-shrink-0 md:w-8 md:h-8 w-5 h-5 rounded-full flex items-center justify-center ${
+                                    !notification.isRead
+                                      ? "bg-blue-100"
+                                      : "bg-gray-100"
+                                  }`}
+                                >
+                                  <div
+                                    className={`w-2 h-2 rounded-full ${
+                                      !notification?.isRead
+                                        ? "bg-[#2872a1]"
+                                        : "bg-gray-400"
+                                    }`}
+                                  />
                                 </div>
 
                                 <div className="flex-1 min-w-0">
-                                  <p className={`md:text-sm text-[12px] font-Gordita-Medium mb-1 label-text ${!notification.isRead ? "text-gray-900" : "text-gray-700"
-                                    }`}>
-                                    {notification?.message.slice(0, 60) + (notification?.message?.length > 100 ? "..." : "")}
+                                  <p
+                                    className={`md:text-sm text-[12px] font-Gordita-Medium mb-1 label-text ${
+                                      !notification.isRead
+                                        ? "text-gray-900"
+                                        : "text-gray-700"
+                                    }`}
+                                  >
+                                    {notification?.message.slice(0, 60) +
+                                      (notification?.message?.length > 100
+                                        ? "..."
+                                        : "")}
                                   </p>
                                   <div className="flex items-center justify-between">
                                     <p className="md:text-xs text-[10px] text-gray-500">
@@ -354,7 +391,9 @@ function UserLayout({
                           <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                             <IoMdNotificationsOutline className="text-gray-300 w-8 h-8" />
                           </div>
-                          <h4 className="font-Gordita-Medium text-gray-900 mb-2">No notifications yet</h4>
+                          <h4 className="font-Gordita-Medium text-gray-900 mb-2">
+                            No notifications yet
+                          </h4>
                           <p className="text-sm text-gray-500 max-w-xs">
                             We'll notify you when something important happens
                           </p>
@@ -371,16 +410,38 @@ function UserLayout({
                         >
                           {showAll ? (
                             <>
-                              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                              <svg
+                                className="w-4 h-4 mr-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M5 15l7-7 7 7"
+                                />
                               </svg>
                               Show less
                             </>
                           ) : (
                             <>
-                              <span className="text-[12px] text-gray-500">View all Notifications</span>
-                              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              <span className="text-[12px] text-gray-500">
+                                View all Notifications
+                              </span>
+                              <svg
+                                className="w-4 h-4 ml-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M19 9l-7 7-7-7"
+                                />
                               </svg>
                             </>
                           )}
@@ -408,9 +469,7 @@ function UserLayout({
             </div>
           </header>
 
-          <main className="flex-1 md:p-6 p-2 overflow-auto">
-            {page}
-          </main>
+          <main className="flex-1 md:p-6 p-2 overflow-auto">{page}</main>
         </div>
       </div>
     </>
@@ -481,7 +540,8 @@ const NavigationMenu = ({ items, isMobile = false }: INavigationMenuProps) => {
                           className={clsx(
                             "flex items-center justify-between w-full px-4 py-3 rounded-lg text-sm font-Gordita-Medium transition-colors",
                             {
-                              "text-[#2872a1] bg-blue-50": item.isActive || open,
+                              "text-[#2872a1] bg-blue-50":
+                                item.isActive || open,
                               "text-gray-700 hover:text-[#2872a1] hover:bg-blue-50":
                                 !item.isActive && !open,
                             }

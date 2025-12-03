@@ -799,7 +799,7 @@ export default function CrmView() {
   }
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen overflow-auto max-w-[1300px]">
       {/* Header */}
       <div className="flex items-center justify-between md:mb-4 mb-3">
         <h1 className="heading-text">Customer Relationship Management</h1>

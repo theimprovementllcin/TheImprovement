@@ -141,7 +141,7 @@ const Chatbot = () => {
     return (
       <Button
         onClick={onOpen}
-        className="fixed md:bottom-10 bottom-[60px] right-4 z-20 bg-[#2872a1] text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-600 animate-bounce"
+        className="fixed md:bottom-10 bottom-[60px] right-4 z-20 bg-[#2173A2] text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-600 animate-bounce"
         aria-label="Open chatbot"
       >
         <RiRobot2Line className="w-6 h-6" />
@@ -157,7 +157,7 @@ const Chatbot = () => {
       <div className="bg-gradient-to-r from-[#2872a1] to-blue-700 p-4 rounded-t-xl flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-[#212227] backdrop-blur-sm rounded-full flex items-center justify-center">
-            <Image src="/images/logobw.png" alt="logo" width={24} height={24} />
+            <Image src="/llclogo.png" alt="logo" width={24} height={24} />
           </div>
           <div className="text-white">
             <p className="font-Gordita-Medium label-text text-white">Hi, how can I help you today?</p>
@@ -214,7 +214,7 @@ const Chatbot = () => {
                         <FiUser className="w-4 h-4 text-[#2872a1]" />
                       ) : (
                         <div className="w-[30px] h-[30px] bg-[#212227] backdrop-blur-sm rounded-full flex items-center justify-center">
-                          <Image src="/images/logobw.png" alt="logo" width={24} height={24} />
+                          <Image src="/llclogo.png" alt="logo" width={24} height={24} />
                         </div>
                       )}
                     </div>

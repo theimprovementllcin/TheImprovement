@@ -157,7 +157,7 @@ const BuilderHeroSection = () => {
             </div>
             <div className="bg-white/10 rounded-[6px] backdrop-blur-sm max-w-[580px] ">
               <p className="md:text-[20px] text-[14px]  text-white leading-[28.5px] font-Gordita-Medium px-[4px] text-center relative mb-3 md:mb-0">
-                India’s No.1 Modern Construction - Tech Enterprise Leader
+                US’s No.1 Modern Construction - Tech Enterprise Leader
                 <span className="absolute hidden bottom-0 left-1/2 transform -translate-x-1/2 bg-white h-[1px] w-[90%] md:inline-block"></span>
               </p>
             </div>
@@ -268,7 +268,7 @@ const BuilderHeroSection = () => {
                 </div>
               </div>
               <div>
-                <Button className="bg-[#2872a1] mt-2 md:py-[6px] py-1 w-full rounded-[6px] text-white font-Gordita-Bold">
+                <Button className="bg-[#2173A2] mt-2 md:py-[6px] py-1 w-full rounded-[6px] text-white font-Gordita-Bold">
                   Submit
                 </Button>
               </div>
